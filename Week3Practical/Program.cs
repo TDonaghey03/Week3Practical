@@ -1,9 +1,22 @@
-﻿class Book
+﻿using System.Net;
+using System.Reflection;
+
+class Book
 {
+    //Properties
     string Title;
     string Author;
     string ISBN;
     int NoOfPages;
+
+    // Constructor for Book object
+    public Book(string bookTitle, string bookAuthor, string bookISBN, int bookNoOfPages)
+    {
+        Title = bookTitle;
+        Author = bookAuthor;    
+        ISBN = bookISBN;
+        NoOfPages = bookNoOfPages;
+    }
 
     void DisplayInfo()
     {
@@ -17,21 +30,12 @@
         Console.WriteLine();
     }
 
+
     static void Main(string[] args)
     {
-        //Book 1 information
-        Book book = new Book();
-        book.Title = "C# for beginners";
-        book.Author = "Bill Gates";
-        book.ISBN = "123456677";
-        book.NoOfPages = 200;
-
-        //Book 2 information
-        Book book2 = new Book();
-        book2.Title = "C# methods and classes";
-        book2.Author = "Microsoft";
-        book2.ISBN = "839390392";
-        book2.NoOfPages = 50;
+        //Create instance of book class
+        Book book = new Book("C# for beginners","Bill Gates","123455667",200);
+        Book book2 = new Book("Visual Studio 2022", "Microsoft", "102918293", 70);
 
         //Output book information to the console
         book.DisplayInfo();
